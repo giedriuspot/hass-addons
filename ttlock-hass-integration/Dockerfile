@@ -1,10 +1,33 @@
 ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM node:18-alpine
 
 ENV LANG C.UTF-8
 
 RUN apk update
-RUN apk add --no-cache nodejs npm python3 py3-pip alpine-sdk libcap bluez bluez-dev eudev-dev
+RUN apk add --no-cache  python3 py3-pip alpine-sdk libcap bluez bluez-dev eudev-dev
+
+RUN \
+    set -x \
+    && apk add --no-cache \
+        bash \
+        bind-tools \
+        ca-certificates \
+        curl \
+        jq \
+        libstdc++ \
+        tzdata \
+        xz
+		
+RUN \
+    mkdir -p /usr/src/bashio \
+    && curl -L -f -s "https://github.com/hassio-addons/bashio/archive/v0.16.2.tar.gz" \
+        | tar -xzf - --strip 1 -C /usr/src/bashio \
+    && mv /usr/src/bashio/lib /usr/lib/bashio \
+    && ln -s /usr/lib/bashio/bashio /usr/bin/bashio
+
+RUN apk update
+RUN apk add --no-cache npm python3 py3-pip alpine-sdk libcap bluez bluez-dev eudev-dev
+#RUN npm install -g npm@8.9
 RUN setcap cap_net_raw+eip $(eval readlink -f $(which node))
 
 WORKDIR /
