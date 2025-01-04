@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM node:18-alpine
+FROM node:18-alpine3.15
 
 ENV LANG C.UTF-8
 
@@ -26,7 +26,7 @@ RUN \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio
 
 RUN apk update
-RUN apk add --no-cache npm python3~3.9.6 py3-pip alpine-sdk libcap bluez bluez-dev eudev-dev
+RUN apk add --no-cache npm python3 py3-pip alpine-sdk libcap bluez bluez-dev eudev-dev
 #RUN npm install -g npm@8.9
 RUN echo "!!!!!!PYTHON3 VERSION!!!!!!"
 RUN echo python3 -v
