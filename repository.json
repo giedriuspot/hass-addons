@@ -1,5 +1,5 @@
 {
-  "name": "TTLock integration",
-  "url": "https://github.com/kind3r/ttlock-hass-integration",
-  "maintainer": "Emanuel Posescu <kind3r@gmail.com>"
+  "name": "TTLock integration modified by Giedrius",
+  "url": "https://github.com/giedriuspot/ttlock-hass-integration",
+  "maintainer": "Giedrius <giedriuspot@gmail.com>"
 }
