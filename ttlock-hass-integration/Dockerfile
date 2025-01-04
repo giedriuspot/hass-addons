@@ -1,6 +1,12 @@
 ARG BUILD_FROM
 #FROM $BUILD_FROM
-FROM homeassistant/amd64-base:3.15
+#FROM homeassistant/amd64-base:3.15
+FROM homeassistant/aarch64-base:3.15
+
+#armhf: homeassistant/armhf-base:latest
+#aarch64: homeassistant/aarch64-base:latest
+#amd64: homeassistant/amd64-base:latest
+#i386: homeassistant/i386-base:latest
 
 ENV LANG C.UTF-8
 
