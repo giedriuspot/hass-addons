@@ -15,7 +15,7 @@ COPY addon /app
 RUN rm -rf /app/node_modules
 
 RUN node -v
-RUN python -v
+RUN python3 -v
 
 RUN cd /app && npm i
 
