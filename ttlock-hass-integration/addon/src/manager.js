@@ -658,7 +658,7 @@ class Manager extends EventEmitter {
         // this._bindLockEvents(lock);
         // check if lock is in pairing mode
         // add it to the list of new locks, ready to be initialized
-        console.log("Discovered new lock:", lock.toJSON());
+        console.log("Discovered new lock:", lock.toJSON(true));
         this.newLocks.set(lock.getAddress(), lock);
         listChanged = true;
         if (this.client.isScanning()) {
@@ -667,7 +667,7 @@ class Manager extends EventEmitter {
         }
       }
     } else {
-      console.log("Discovered unknown lock:", lock.toJSON());
+      console.log("Discovered unknown lock:", lock.toJSON(true));
     }
 
     if (listChanged) {

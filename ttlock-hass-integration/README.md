@@ -1,8 +1,8 @@
 # Home Assistant Add-on TTLock
 
-> This is a **WORK IN PROGRESS**. Help with testing and report bugs [here](https://github.com/kind3r/hass-addons/issues).
+> This is a **WORK IN PROGRESS**. Help with testing and report bugs [here](https://github.com/giedriuspot/hass-addons/issues).
 
-Feeling generous and want to support my work, here is [my PayPal link](https://paypal.me/kind3r).
+Feeling generous and want to support original authors work, here is [my PayPal link](https://paypal.me/kind3r).
 
 ## Requirements
 - Bluetooth adapter compatible with [@abandonware/noble](https://github.com/abandonware/noble)
